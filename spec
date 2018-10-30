@@ -1,0 +1,5 @@
+describe('ScoringService', () => {
+    describe('', () => {
+        
+    })
+})
