@@ -32,7 +32,47 @@ html,body{
     
 }
 
-.scoreinput{
+.scoreinputf{
     width: 35px;
 }
+
+.scoreinputb{
+    width: 35px;
+}
+
+.scoreinput{
+    width: 45px;
+}
+
+.scoreinputt{
+    width: 45px;
+}
+
+.trashcan{
+    color: red;
+    width: 15px
+}
+
+.players{
+    width: 150px;
+}
+
+.title{
+    width: 150px;
+    text-align: left;
+    padding-left: 15px;
+    
+}
+
+.holenum{
+    width: 35px;
+    text-align: center;
+}
+
+.holenumt{
+    width: 45px;
+}
+
+
+
 

@@ -20,8 +20,40 @@
                 <button onclick="addplayers()">Go</button>
             </div>
         </div>
+        <select id="courseselect" onchange="loadCourses(this.value)"></select>
+        <select id="teeselect" onchange="choosetee(this.value)"></select>
         <div class="content">
-            <div>Holes</div>
+            <table>
+                <tr>
+                    <th class="title">Holes</th>
+                    <th class="holenum">1</th>
+                    <th class="holenum">2</th>
+                    <th class="holenum">3</th>
+                    <th class="holenum">4</th>
+                    <th class="holenum">5</th>
+                    <th class="holenum">6</th>
+                    <th class="holenum">7</th>
+                    <th class="holenum">8</th>
+                    <th class="holenum">9</th>
+                    <th class="holenumt">Out</th>
+                    <th class="holenum">10</th>
+                    <th class="holenum">11</th>
+                    <th class="holenum">12</th>
+                    <th class="holenum">13</th>
+                    <th class="holenum">14</th>
+                    <th class="holenum">15</th>
+                    <th class="holenum">16</th>
+                    <th class="holenum">17</th>
+                    <th class="holenum">18</th>
+                    <th class="holenumt">In</th>
+                    <th class="holenumt">Total</th>
+
+                </tr>
+            </table>
+
+            
+
+            
             
 
         </div>
