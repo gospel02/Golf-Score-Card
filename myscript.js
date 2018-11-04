@@ -1,3 +1,5 @@
+
+
 (function(){
     loadDoc();
 })();
@@ -16,8 +18,7 @@ function loadDoc() {
     };
     xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses", true);
     xhttp.send();
-  }
-
+}
 function loadCourses(courseid) {
     //set to empty
     console.log(courseid)
@@ -30,13 +31,32 @@ function loadCourses(courseid) {
         let teearray = mycourse.data.holes[0].teeBoxes;
         for(let i = 0; i < teearray.length; i++){
             $("#teeselect").append("<option value='" + i +"'>" + teearray[i].teeType + "</option>");
+            }
         }
-     }
     };
     xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + courseid, true,);
     xhttp.send();
+}
+function choosetee(teeid) {
+    //set to empty
+    console.log(teeid)
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        mytees = JSON.parse(this.responseText);
+        console.log(mytees);
 
-}  
+        let yardsarray = mytees.data.holes[0].teeBoxes[2];
+        for(let i = 0; i < yardsarray.length; i++){
+            $("#teepicked").append("<option value='" + i +"'>" + yardsarray[i].yards + "</option>");
+            
+        }
+     }
+    };
+    xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + ,  true,);
+    xhttp.send();
+
+} 
 
 $('.numbinput').on("keydown", function(event){
     if(event.which === 13){
