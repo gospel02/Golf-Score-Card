@@ -31,7 +31,13 @@ function loadCourses(courseid) {
         let teearray = mycourse.data.holes[0].teeBoxes;
         for(let i = 0; i < teearray.length; i++){
             $("#teeselect").append("<option value='" + i +"'>" + teearray[i].teeType + "</option>");
+            
             }
+            $("#coursepicked").append("<div>" + mycourse.data.name + "</div>");
+
+
+        
+            //$("#yard1").append("<div>" + mycourse.data.holes[0].teeBoxes[0].yards + "</div>");            
         }
     };
     xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + courseid, true,);
@@ -43,17 +49,25 @@ function choosetee(teeid) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        mytees = JSON.parse(this.responseText);
-        console.log(mytees);
+        mycourse = JSON.parse(this.responseText);
+        console.log(mycourse);
 
-        let yardsarray = mytees.data.holes[0].teeBoxes[2];
+        let yardsarray = mycourse.data.holes;
         for(let i = 0; i < yardsarray.length; i++){
-            $("#teepicked").append("<option value='" + i +"'>" + yardsarray[i].yards + "</option>");
+            $("#yard1").append("<th class='yards' value='" + i +"'>" + yardsarray[i].teeBoxes[teeid].yards + "</th>");
             
+        };
+        let pararray = mycourse.data.holes;
+        for(let i = 0; i < pararray.length; i++){
+            $("#par1").append("<div value='" + i +"'>" + pararray[i].teeBoxes[teeid].par + "</div>");
+        };
+        let hdpsarray = mycourse.data.holes;
+        for(let i = 0; i < hdpsarray.length; i++){
+            $("#handicap1").append("<input value='" + i +"'>" + hdpsarray[i].teeBoxes[teeid].hcp + "</input>");
         }
      }
     };
-    xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + ,  true,);
+    xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + 11819,  true,);
     xhttp.send();
 
 } 
@@ -72,33 +86,34 @@ function addplayers(){
 
     if($.trim( $('.numbinput').val()) == '')
     alert('Please input number of Players');
+    
     else{
 
         for(let i = 1; i <= numbplayers; i++){
         $(".content").append( "<div class='column'>" + 
         "<i class='trashcan far fa-trash-alt'></i>" +
         "<input class='players' contenteditable='true' placeholder='Enter Player " + i + "'></input>" +
-        "<input class='scoreinputf' id='1' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputf' id='2' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputf' id='3' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputf' id='4' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputf' id='5' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputf' id='6' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputf' id='7' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputf' id='8' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputf' id='9' contenteditable='true' type='number' placeholder='-'></input>" +
+        "<input class='scoreinputf' id='1' contenteditable='true' type='number' min='0' placeholder=''></input>" +
+        "<input class='scoreinputf' id='2' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf' id='3' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf' id='4' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf' id='5' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf' id='6' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf' id='7' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf' id='8' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf' id='9' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='10' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='11' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='12' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='13' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='14' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='15' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='16' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='17' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb' id='18' contenteditable='true' type='number' placeholder=''></input>" +
         "<input class='scoreinput' id='fronttotal'></input>" +
-        "<input class='scoreinputb' id='10' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputb' id='11' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputb' id='12' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputb' id='13' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputb' id='14' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputb' id='15' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputb' id='16' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputb' id='17' contenteditable='true' type='number' placeholder='-'></input>" +
-        "<input class='scoreinputb' id='18' contenteditable='true' type='number' placeholder='-'></input>" +
         "<input class='scoreinput' id='backtotal'></input>" +
-        "<input class='scoreinputt' id='total'></input>" +
+        "<input class='scoreinput' id='total'></input>" +
         "</div");
         }
     }    
@@ -117,13 +132,14 @@ function addplayers(){
     $(document).on("change", ".scoreinputf", function() {
         var sum = 0;
         $(".scoreinputf").each(function(){
-            sum += +$(this).val();
+        sum += +$(this).val();
+        
         });
+    
         $("#fronttotal").val(sum);
     });
 
 
-    
     $(document).on("change", ".scoreinputb", function() {
         var sum = 0;
         $(".scoreinputb").each(function(){
@@ -132,9 +148,9 @@ function addplayers(){
         $("#backtotal").val(sum);
     });
 
-    $(document).on("change", ".scoreinput", function() {
+    $(document).on("change", ".scoreinputf, .scoreinputb", function() {
         var sum = 0;
-        $(".scoreinput").each(function(){
+        $(".scoreinputf, .scoreinputb").each(function(){
             sum += +$(this).val();
         });
         $("#total").val(sum);

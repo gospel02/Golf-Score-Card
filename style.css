@@ -73,6 +73,23 @@ html,body{
     width: 45px;
 }
 
+#yard1{
+    display: flex;
+    
+}
+.yards{
+    width: 35px;
+}
+
+#par1{
+    display: flex;
+    width: 35px;
+}
+#handicap1{
+    display: flex;
+    width: 35px;
+}
+
 
 
 
