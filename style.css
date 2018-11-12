@@ -5,31 +5,62 @@ html,body{
     margin: 0;
 }
 
-
 .modal{
-    position: absolute;
+    position: relative;
     background: rgba(0,0,0,0.6);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
-
 }
+
 .panel{
     background-color: #FFFFFF;
     border-radius: 4px;
-    width: 300px;
+    width: 600px;
     padding: 15px;
     display: flex;
     justify-content: space-between;
+}
 
-
+.scorecard{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px
 }
 
 .content{
     filter: blur(4px);
+    width: 1050px;
+    height: 200px;
+    border-radius: 15px; 
+    background: gray;
+    padding: 40px;
+   
+}
+
+#coursepicked{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+#teespicked{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    text-align: center;
     
+}
+
+#mainpage{
+    background-image: url(golf.jpg);
+    width: 100%;
+    height: 100%;
 }
 
 .scoreinputf{
@@ -58,37 +89,85 @@ html,body{
 }
 
 .title{
-    width: 150px;
+    width: 153px;
     text-align: left;
     padding-left: 15px;
+    font: bold;
+    border-style: black;
+}
+
+#yardout{
+    display: flex;
+    text-align: center;
     
 }
 
-.holenum{
-    width: 35px;
+#yardin{
+    display: flex;
+    text-align: center
+}
+
+.holes{
+    width: 39px;
+}
+.yardsout{
+    width: 39px;
+    
+}
+
+.yardsin{
+    width: 39px;
+    
+} 
+
+.parsout{
+    width: 39px;
+    
+}
+
+.parsin{
+    width: 39px;
+    
+} 
+
+.hdps{
+    width: 39px;
+}
+
+#parout{
+    display: flex;
     text-align: center;
 }
 
-.holenumt{
-    width: 45px;
-}
-
-#yard1{
+#parin{
     display: flex;
-    
-}
-.yards{
-    width: 35px;
-}
-
-#par1{
-    display: flex;
-    width: 35px;
+    text-align: center;
 }
 #handicap1{
     display: flex;
-    width: 35px;
+    text-align: center;
 }
+
+#courseholes{
+    display: flex;
+
+}
+#Holes1{
+    display: flex;
+    text-align: center;
+}
+
+.totals{
+    width: 48px;
+    text-align: center;
+}
+#yard1{
+    display: flex;
+    text-align: center;
+}
+
+
+
 
 
 

@@ -15,115 +15,54 @@
     <body>
         <div class="modal">
             <div class="panel">
+                <span>Choose Course</span>
+                <select id="courseselect" onchange="loadCourses(this.value)"></select>
+                <span>Choose Tees</span>
+                <select id="teeselect" onchange="choosetee(this.value)"></select>
                 <span>Number of Players</span>
                 <input class="numbinput" type="number" placeholder="Enter Number of Players">
-                <button onclick="addplayers()">Go</button>
+                <button onclick="addplayers()">Lets Play</button>
             </div>
         </div>
-    
-        <div class="content">
-            <select id="courseselect" onchange="loadCourses(this.value)"></select>
-            <select id="teeselect" onchange="choosetee(this.value)"></select>
+        <div id="mainpage">
             <div id="coursepicked"></div>
-            <div id="teepicked"></div>
-            
-            <table>
-                <tr>
-                    <th id="Holes" class="title">Holes</th>
-                    <th class="holenum">1</th>
-                    <th class="holenum">2</th>
-                    <th class="holenum">3</th>
-                    <th class="holenum">4</th>
-                    <th class="holenum">5</th>
-                    <th class="holenum">6</th>
-                    <th class="holenum">7</th>
-                    <th class="holenum">8</th>
-                    <th class="holenum">9</th>
-                    <th class="holenum">10</th>
-                    <th class="holenum">11</th>
-                    <th class="holenum">12</th>
-                    <th class="holenum">13</th>
-                    <th class="holenum">14</th>
-                    <th class="holenum">15</th>
-                    <th class="holenum">16</th>
-                    <th class="holenum">17</th>
-                    <th class="holenum">18</th>
-                    <th class="holenumt">Out</th>
-                    <th class="holenumt">In</th>
-                    <th class="holenumt">Total</th>
-
-                </tr>
-                <tr>
-                    <th class="title">Yardage</th>
-                    <th id="yard1"></th>
-
-                    <th class="holenumt"></th>
-                    <th class="holenumt"></th>
-                    <th class="holenumt"></th>
-
-                </tr>
-                <tr>
-                    <th class="title">Par</th>
-                    <th class="holenum" id="par1"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenumt"></th>
-                    <th class="holenumt"></th>
-                    <th class="holenumt"></th>
-
-                </tr>
-                <tr>
-                    <th class="title">Handicap</th>
-                    <th class="holenum" id="handicap1"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenum"></th>
-                    <th class="holenumt"></th>
-                    <th class="holenumt"></th>
-                    <th class="holenumt"></th>
-
-                </tr>
-                
-            </table>
-
-            
-
-            
-            
-
+            <div id="teespicked"></div>
+            <div class="scorecard">
+                <div class="content">
+                    <div id="coursedata">
+                        <div id="courseholes">
+                            <div id="Holes" class="title">Holes</div>
+                            <div id="Holes1" ></div>
+                            <div class='totals'>Out</div>
+                            <div class='totals'>In</div>
+                            <div class='totals'>Total</div>
+                        </div>
+                        <div id="courseholes">
+                            <div id="Holes" class="title">Yards</div>
+                            <div id="yardout" ></div>
+                            <div id="yardin" ></div>
+                            <div class='totals' id='yardsout'></div>
+                            <div class='totals'id='yardsin'></div>
+                            <div class='totals' id=yardstotal></div>
+                        </div>
+                        <div id="courseholes">
+                            <div id="Holes" class="title">Par</div>
+                            <div id="parout" ></div>
+                            <div id="parin" ></div>
+                            <div class='totals' id="parsout">36</div>
+                            <div class='totals' id="parsin">36</div>
+                            <div class='totals' id="parstotal">72</div>
+                        </div>
+                        <div id="courseholes">
+                            <div id="Holes" class="title">Handicap</div>
+                            <div id="handicap1" ></div>
+                            <div class='totals'></div>
+                            <div class='totals'></div>
+                            <div class='totals'></div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
         </div>
-
-
- 
-
-    </body>
+</body>
 </html>
