@@ -54,9 +54,6 @@ function choosetee(teeid) {
 
         $("#teespicked").append("<div>" + 'Tee Color -' + ' ' + mycourse.data.holes[0].teeBoxes[teeid].teeColorType + "</div>");   
         
-
-
-        
         let holesarray = mycourse.data.holes;
         for(let i = 0; i < holesarray.length; i++){
             $("#Holes1").append("<div class='holes' value='" + i +"'>" + holesarray[i].hole + "</div>");
@@ -71,36 +68,30 @@ function choosetee(teeid) {
             $("#yardout").append("<div class='yardsout' value='" + i +"'>" + yardsarrayout[i].teeBoxes[teeid].yards + "</div>");
         };
 
-
-
         let yardsarrayin = mycourse.data.holes;
         for(let i = 9; i < yardsarrayin.length; i++){
             $("#yardin").append("<div class='yardsin' value='" + i +"'>" + yardsarrayin[i].teeBoxes[teeid].yards + "</div>");
-            console.log(yardsarrayin[i].teeBoxes[teeid].yards);
-
-
-
-
-
             
+
         };
 
-        let sum = 0;
-        $('.yardsin').each(function(){
-        sum += parseFloat($(this).text());
-        console.log(sum); // Or this.innerHTML, this.innerText
+        let yardsoutsum = 0;
+        $('.yardsout').each(function(){
+        yardsoutsum += parseFloat($(this).text());
+        $("#yardsout").text(yardsoutsum);
         });
 
+        let yardsinsum = 0;
+        $('.yardsin').each(function(){
+        yardsinsum += parseFloat($(this).text());
+        $("#yardsin").text(yardsinsum);
+        });
 
-        /*function sum (n){
-            sum = 0;
-            for (i = 0; i <= n; i++){
-                sum = sum + i;
-            }
-            return sum;
-
-        }
-        console.log(sum +(yardsarrayin[i].teeBoxes[teeid].yards));*/
+        let yardstotalsum = 0;
+        $('.yardsout, .yardsin').each(function(){
+        yardstotalsum += parseFloat($(this).text());
+        $("#yardstotal").text(yardstotalsum);
+        });
 
         let pararrayout = mycourse.data.holes;
         let a = -1;
@@ -115,39 +106,40 @@ function choosetee(teeid) {
             $("#parin").append("<div class='parsin' value='" + i +"'>" + pararrayin[i].teeBoxes[teeid].par + "</div>");
         };
 
-        
+        let parsoutsum = 0;
+        $('.parsout').each(function(){
+        parsoutsum += parseFloat($(this).text());
+        $("#parsout").text(parsoutsum);
+        });
+
+        let parsinsum = 0;
+        $('.parsin').each(function(){
+        parsinsum += parseFloat($(this).text());
+        $("#parsin").text(parsinsum);
+        });
+
+        let parstotalsum = 0;
+        $('.parsout, .parsin').each(function(){
+        parstotalsum += parseFloat($(this).text());
+        $("#parstotal").text(parstotalsum); 
+        });
 
         let hdpsarray = mycourse.data.holes;
         for(let i = 0; i < hdpsarray.length; i++){
             $("#handicap1").append("<div class='hdps' value='" + i +"'>" + hdpsarray[i].teeBoxes[teeid].hcp + "</div>");
         }
-
-    
-     }
-
-
-
+    }
     };
     xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + 11819,  true,);
     xhttp.send();
 
 } 
 
-
-
-
-
-
-
-
 $('.numbinput').on("keydown", function(event){
     if(event.which === 13){
         addplayers();
     }
 });
-
-
-
 
 function addplayers(){
     let numbplayers = $(".numbinput").val();
