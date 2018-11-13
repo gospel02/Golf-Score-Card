@@ -161,27 +161,27 @@ function addplayers(){
         $(".content").append( "<div class='column'>" + 
         "<i class='trashcan far fa-trash-alt'></i>" +
         "<input class='players' contenteditable='true' placeholder='Enter Player " + i + "'></input>" +
-        "<input class='scoreinputf' id='1' contenteditable='true' type='number' min='0' placeholder=''></input>" +
-        "<input class='scoreinputf' id='2' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputf' id='3' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputf' id='4' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputf' id='5' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputf' id='6' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputf' id='7' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputf' id='8' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputf' id='9' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='10' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='11' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='12' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='13' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='14' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='15' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='16' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='17' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinputb' id='18' contenteditable='true' type='number' placeholder=''></input>" +
-        "<input class='scoreinput' id='fronttotal'></input>" +
-        "<input class='scoreinput' id='backtotal'></input>" +
-        "<input class='scoreinput' id='total'></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' min='0' placeholder=''></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputf" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinputb" + i +"' id='pinput' contenteditable='true' type='number' placeholder=''></input>" +
+        "<input class='scoreinput' id='fronttotal" + i +"'></input>" +
+        "<input class='scoreinput' id='backtotal" + i +"'></input>" +
+        "<input class='scoreinput' id='total" + i +"'></input>" +
         "</div");
         }
     }    
@@ -197,31 +197,109 @@ function addplayers(){
         });
     });
 
-    $(document).on("change", ".scoreinputf", function() {
+    $(document).on("change", ".scoreinputf1", function() {
         var sum = 0;
-        $(".scoreinputf").each(function(){
+        $(".scoreinputf1").each(function(){
         sum += +$(this).val();
         
         });
     
-        $("#fronttotal").val(sum);
+        $("#fronttotal1").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputf2", function() {
+        var sum = 0;
+        $(".scoreinputf2").each(function(){
+        sum += +$(this).val();
+        
+        });
+    
+        $("#fronttotal2").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputf3", function() {
+        var sum = 0;
+        $(".scoreinputf3").each(function(){
+        sum += +$(this).val();
+        
+        });
+    
+        $("#fronttotal3").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputf4", function() {
+        var sum = 0;
+        $(".scoreinputf4").each(function(){
+        sum += +$(this).val();
+        
+        });
+    
+        $("#fronttotal4").val(sum);
     });
 
 
-    $(document).on("change", ".scoreinputb", function() {
+    $(document).on("change", ".scoreinputb1", function() {
         var sum = 0;
-        $(".scoreinputb").each(function(){
+        $(".scoreinputb1").each(function(){
             sum += +$(this).val();
         });
-        $("#backtotal").val(sum);
+        $("#backtotal1").val(sum);
     });
 
-    $(document).on("change", ".scoreinputf, .scoreinputb", function() {
+    $(document).on("change", ".scoreinputb2", function() {
         var sum = 0;
-        $(".scoreinputf, .scoreinputb").each(function(){
+        $(".scoreinputb2").each(function(){
             sum += +$(this).val();
         });
-        $("#total").val(sum);
+        $("#backtotal2").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputb3", function() {
+        var sum = 0;
+        $(".scoreinputb3").each(function(){
+            sum += +$(this).val();
+        });
+        $("#backtotal3").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputb4", function() {
+        var sum = 0;
+        $(".scoreinputb4").each(function(){
+            sum += +$(this).val();
+        });
+        $("#backtotal4").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputf1, .scoreinputb1", function() {
+        var sum = 0;
+        $(".scoreinputf1, .scoreinputb1").each(function(){
+            sum += +$(this).val();
+        });
+        $("#total1").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputf2, .scoreinputb2", function() {
+        var sum = 0;
+        $(".scoreinputf2, .scoreinputb2").each(function(){
+            sum += +$(this).val();
+        });
+        $("#total2").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputf3, .scoreinputb3", function() {
+        var sum = 0;
+        $(".scoreinputf3, .scoreinputb3").each(function(){
+            sum += +$(this).val();
+        });
+        $("#total3").val(sum);
+    });
+
+    $(document).on("change", ".scoreinputf4, .scoreinputb4", function() {
+        var sum = 0;
+        $(".scoreinputf4, .scoreinputb4").each(function(){
+            sum += +$(this).val();
+        });
+        $("#total4").val(sum);
     });
 
     
