@@ -1,7 +1,9 @@
-
+let courseid;
+let coursecollection;
 
 (function(){
     loadDoc();
+    console.log(courseid)
 })();
 
 function loadDoc() {
@@ -19,8 +21,9 @@ function loadDoc() {
     xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses", true);
     xhttp.send();
 }
-function loadCourses(courseid) {
+function loadCourses(crseid) {
     //set to empty
+    courseid = crseid;
     console.log(courseid)
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -130,7 +133,7 @@ function choosetee(teeid) {
         }
     }
     };
-    xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + 11819,  true,);
+    xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + courseid,  true,);
     xhttp.send();
 
 } 
