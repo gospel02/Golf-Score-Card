@@ -12,8 +12,10 @@ function loadDoc() {
       if (this.readyState == 4 && this.status == 200) {
           coursecollection = JSON.parse(this.responseText);
         console.log(coursecollection);
+        $("#courseselect").append("<option value='' disabled selected hidden>Choose Course</option>");
 
         for(let i = 0; i < coursecollection.courses.length; i++){
+        
         $("#courseselect").append("<option value='" + coursecollection.courses[i].id +"'>" + coursecollection.courses[i].name + "</option>");
         }
       }
@@ -30,6 +32,8 @@ function loadCourses(crseid) {
         if (this.readyState == 4 && this.status == 200) {
         mycourse = JSON.parse(this.responseText);
         console.log(mycourse);
+        $("#teeselect").append("<option value='' disabled selected hidden>Choose Tees</option>");
+
 
         let teearray = mycourse.data.holes[0].teeBoxes;
         for(let i = 0; i < teearray.length; i++){
@@ -149,6 +153,7 @@ function addplayers(){
 
     if($.trim( $('.numbinput').val()) == '')
     alert('Please input number of Players');
+    
     
     else{
 
