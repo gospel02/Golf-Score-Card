@@ -12,7 +12,7 @@ function loadDoc() {
       if (this.readyState == 4 && this.status == 200) {
           coursecollection = JSON.parse(this.responseText);
         console.log(coursecollection);
-        $("#courseselect").append("<option value='' disabled selected hidden>Choose Course</option>");
+        $("#courseselect").append("<option value='' disabled selected hidden>Pick Course From Dropdown</option>");
 
         for(let i = 0; i < coursecollection.courses.length; i++){
         
@@ -32,7 +32,7 @@ function loadCourses(crseid) {
         if (this.readyState == 4 && this.status == 200) {
         mycourse = JSON.parse(this.responseText);
         console.log(mycourse);
-        $("#teeselect").append("<option value='' disabled selected hidden>Choose Tees</option>");
+        $("#teeselect").append("<option value='' disabled selected hidden>Pick Tees From Dropdown</option>");
 
 
         let teearray = mycourse.data.holes[0].teeBoxes;
@@ -198,7 +198,53 @@ function addplayers(){
         });
     });
 
-    (document).ready(function(){
+
+    $(document).on('change', '#player', function(){
+        let player1 = $(".players1").val()
+        let player2 = $(".players2").val()
+
+        if(player1 === player2){
+            console.log("Duplicate");
+        };
+    })
+    
+
+    /*$("#player").each(function(){ 
+            if((this).html() === (this).html()){
+                alert("Can't use that name")
+                //$(".perror").html("Sorry").
+    
+ 
+            }
+            
+            
+    
+        });*/
+    
+    
+
+
+    
+    
+
+
+
+    /*$(document).ready(function(){
+        $('#player').change(function(){
+          var theinput=$(this);
+          var value=theinput.val();
+          $('#player').each(function(){
+            if($(this).val()==value){
+              theinput.val('');//to remove the value
+              alert('you choose a duplicate');//notify the user why the value removed
+            }
+          });
+        });
+      });*/
+
+    
+
+    /*(document).ready(function(){
         $("#player").each(function(){
             if ($(this).val() === value){
                 alert('Same Value')
@@ -206,7 +252,7 @@ function addplayers(){
             
             }else {return true;}
         })
-    })
+    })*/
 
 
     /*$(document).ready(function(){
@@ -330,6 +376,35 @@ function addplayers(){
     
 
 }
+
+
+/*function addplayers(){
+    for(let i = 1; i <= numplayers; i++){
+        $(".left").append("<div" + numplayers + "</div")
+    }
+}
+
+function checkname(myval){
+    $(".pname").each(function(){
+        let player = $(this).html()
+        if(myval === player){
+            console.log("can't use that name")
+            $(".perror").html("Sorry")
+
+        }
+        else{
+            $(".perror").html("");
+        }
+        
+        console.log($(this).html())
+
+    });
+
+}*/
+
+
+
+
 
 
 

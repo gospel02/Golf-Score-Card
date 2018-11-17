@@ -20,7 +20,7 @@
                 <span>Choose Tees</span>
                 <select id="teeselect" onchange="choosetee(this.value)"></select>
                 <span>Number of Players</span>
-                <input class="numbinput" type="number" placeholder="Enter Number of Players">
+                <input class="numbinput" type="number" min="0" max="4" placeholder="Enter Number of Players">
                 <button onclick="addplayers()">Lets Play</button>
             </div>
         </div>
@@ -31,14 +31,14 @@
                 <div class="content">
                     <div id="coursedata">
                         <div id="courseholes">
-                            <div id="Holes" class="title">Holes</div>
+                            <div id="Holes" class="title">Holes -</div>
                             <div id="Holes1" ></div>
                             <div class='totals'>Out</div>
                             <div class='totals'>In</div>
                             <div class='totals'>Total</div>
                         </div>
                         <div id="courseholes">
-                            <div id="Holes" class="title">Yards</div>
+                            <div id="Holes" class="title">Yardage -</div>
                             <div id="yardout"></div>
                             <div id="yardin"></div>
                             <div class='totals' id='yardsout'></div>
@@ -46,7 +46,7 @@
                             <div class='totals' id=yardstotal></div>
                         </div>
                         <div id="courseholes">
-                            <div id="Holes" class="title">Par</div>
+                            <div id="Holes" class="title">Par -</div>
                             <div id="parout" ></div>
                             <div id="parin" ></div>
                             <div class='totals' id="parsout"></div>
@@ -54,7 +54,7 @@
                             <div class='totals' id="parstotal"></div>
                         </div>
                         <div id="courseholes">
-                            <div id="Holes" class="title">Handicap</div>
+                            <div id="Holes" class="title">Handicap -</div>
                             <div id="handicap1" ></div>
                             <div class='totals'></div>
                             <div class='totals'></div>
