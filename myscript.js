@@ -24,7 +24,6 @@ function loadDoc() {
     xhttp.send();
 }
 function loadCourses(crseid) {
-    //set to empty
     courseid = crseid;
     console.log(courseid)
     var xhttp = new XMLHttpRequest();
@@ -51,7 +50,6 @@ function loadCourses(crseid) {
     xhttp.send();
 }
 function choosetee(teeid) {
-    //set to empty
     console.log(teeid)
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -197,76 +195,6 @@ function addplayers(){
             $(this).remove();
         });
     });
-
-
-    $(document).on('change', '#player', function(){
-        let player1 = $(".players1").val()
-        let player2 = $(".players2").val()
-
-        if(player1 === player2){
-            console.log("Duplicate");
-        };
-    })
-    
-
-    /*$("#player").each(function(){ 
-            if((this).html() === (this).html()){
-                alert("Can't use that name")
-                //$(".perror").html("Sorry").
-    
- 
-            }
-            
-            
-    
-        });*/
-    
-    
-
-
-    
-    
-
-
-
-    /*$(document).ready(function(){
-        $('#player').change(function(){
-          var theinput=$(this);
-          var value=theinput.val();
-          $('#player').each(function(){
-            if($(this).val()==value){
-              theinput.val('');//to remove the value
-              alert('you choose a duplicate');//notify the user why the value removed
-            }
-          });
-        });
-      });*/
-
-    
-
-    /*(document).ready(function(){
-        $("#player").each(function(){
-            if ($(this).val() === value){
-                alert('Same Value')
-                return false;
-            
-            }else {return true;}
-        })
-    })*/
-
-
-    /*$(document).ready(function(){
-        $('#player').blur(function(){
-        let player1 = $(".players1").text();
-        let player2 = $(".players2").text();
-        if (player1 == player2) {
-        alert('Same Value');
-        return false;
-        } else { return true;} 
-        })
-    
-    });*/
-
 
     $(document).on("change", ".scoreinputf1", function() {
         var sum = 0;
