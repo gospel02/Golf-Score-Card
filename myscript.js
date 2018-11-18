@@ -24,7 +24,7 @@ function loadDoc() {
     xhttp.send();
 }
 
-function loadCourses(crseid) {
+function loadCoursesInfo(crseid) {
     courseid = crseid;
     console.log(courseid)
     var xhttp = new XMLHttpRequest();
@@ -47,7 +47,7 @@ function loadCourses(crseid) {
     xhttp.send();
 }
 
-function choosetee(teeid) {
+function chooseTeesInfo(teeid) {
     console.log(teeid)
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -140,11 +140,11 @@ $('.numbinput').on("keydown", function(event){
     }
 });
 
-function addplayers(){
+function addPlayersInfo(){
     let numbplayers = $(".numbinput").val();
 
-    if($.trim( $('.numbinput').val()) == ''){
-    alert('Please input number of Players');
+    if(($.trim( $('.numbinput').val()) == '') || ($.trim( $('.numbinput').val()) > '4')) {
+    alert('Please Input Number of Players Max 4.');
     return false;
 
     }else{

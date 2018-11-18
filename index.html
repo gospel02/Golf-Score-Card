@@ -16,12 +16,12 @@
         <div class="modal">
             <div class="panel">
                 <span class='header1'>Choose Course</span>
-                <select id="courseselect" onchange="loadCourses(this.value)"></select>
+                <select id="courseselect" onchange="loadCoursesInfo(this.value)"></select>
                 <span class='header'>Choose Tees</span>
-                <select id="teeselect" onchange="choosetee(this.value)"></select>
+                <select id="teeselect" onchange="chooseTeesInfo(this.value)"></select>
                 <span class='header'>Number of Players</span>
                 <input class="numbinput" type="number" min="0" max="4" placeholder="Enter Number of Players">
-                <button class="button" onclick="addplayers()">Lets Play</button>
+                <button class="button" onclick="addPlayersInfo()">Lets Play</button>
             </div>
         </div>
         <div id="mainpage">
